@@ -15,7 +15,8 @@
 </head>
 
 <body ng-controller="application_controller">
-
+	
+	<!-- TODO : use ng-include to make this stuff more modular -->
 	<div id="mode_selector" ng-controller="mode_controller" ng-click="toggleMode()">
 		{{mode}}
 	</div>
@@ -25,6 +26,10 @@
 	</div>
 
 	<div id="view_mode" ng-controller="view_mode_controller" ng-show={{mode==VIEW_MODE}}>
+			
+	</div>
+	
+	<div id="venn_diagram_mode" ng-controller="venn_diagram_mode_controller" ng-show={{mode==VIEW_MODE}}>
 			
 	</div>
 

@@ -1,14 +1,15 @@
 #mode_selector {
 	text-align: center;
-	border: 2px solid #a1a1a1;
+	border: 2px solid #CCCCCC;
 	padding: 10px 40px; 
-	background: #dddddd;
+	background: #DDDDDD;
 	width: 160px;
 	border-radius: 10px;
+	cursor: pointer;
 };
 #admin_mode {
-	border:2px;
+	border: 2px;
 };
 #view_mode {
-	border:2px
+	border: 2px
 };
