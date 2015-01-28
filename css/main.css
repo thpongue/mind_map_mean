@@ -1,15 +1,36 @@
-#mode_selector {
+#container {
+	width: 500px;
+	height: 300px;
+	border: #545454;
+	background: #DDDDDD;
+	border-radius: 10px;
+	margin: 20px 0px 0px 0px;
+	border: 2px solid #CCCCCC;
+}
+
+#mode_selector_button {
+	width: 190px;
+	overflow: hidden;
 	text-align: center;
 	border: 2px solid #CCCCCC;
-	padding: 10px 40px; 
-	background: #DDDDDD;
-	width: 160px;
+	padding: 5px 5px; 
+	background: #599EFF;
 	border-radius: 10px;
 	cursor: pointer;
-};
+	/*disable selection*/
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 #admin_mode {
-	border: 2px;
-};
+}
+
 #view_mode {
-	border: 2px
-};
+}
+
+#venn_diagram_mode {
+}

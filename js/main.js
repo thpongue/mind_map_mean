@@ -27,4 +27,4 @@ app.controller("view_mode_controller", function($scope) {
 });
 app.controller("venn_diagram_mode_controller", function($scope) {
 	
-});
+})

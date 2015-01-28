@@ -14,25 +14,26 @@
 	<script src="js/main.js"></script>
 </head>
 
-<body ng-controller="application_controller">
-	
-	<!-- TODO : use ng-include to make this stuff more modular -->
-	<div id="mode_selector" ng-controller="mode_controller" ng-click="toggleMode()">
-		{{mode}}
-	</div>
+	<body ng-controller="application_controller">
+		
+		<!-- TODO : use ng-include to make this stuff more modular -->
+		<div id="mode_selector_button" ng-controller="mode_controller" ng-click="toggleMode()">
+			<p>{{mode}}</p>
+		</div>
 
-	<div id="admin_mode" ng-controller="admin_mode_controller" ng-show={{mode==ADMIN_MODE}}>
-			
-	</div>
+		<div id="container">
+			<div id="admin_mode" ng-controller="admin_mode_controller" ng-show={{mode==ADMIN_MODE}}>
+				<p>{{mode}}</p>
+			</div>
 
-	<div id="view_mode" ng-controller="view_mode_controller" ng-show={{mode==VIEW_MODE}}>
+			<div id="view_mode" ng-controller="view_mode_controller" ng-show={{mode==VIEW_MODE}}>
+					<p>{{mode}}</p>
+			</div>
 			
-	</div>
-	
-	<div id="venn_diagram_mode" ng-controller="venn_diagram_mode_controller" ng-show={{mode==VIEW_MODE}}>
-			
-	</div>
-
-</body>
+			<div id="venn_diagram_mode" ng-controller="venn_diagram_mode_controller" ng-show={{mode==VENN_DIAGRAM_MODE}}>
+					<p>{{mode}}</p>
+			</div>
+		</div>
+	</body>
 
 </html>
