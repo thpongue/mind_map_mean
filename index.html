@@ -15,7 +15,9 @@
 </head>
 
 	<body ng-controller="application_controller">
+
 		
+
 		<!-- TODO : use ng-include to make this stuff more modular -->
 		<div id="mode_selector_button" ng-controller="mode_controller" ng-click="toggleMode()">
 			<p>{{mode}}</p>
@@ -24,6 +26,7 @@
 		<div id="container">
 			<div id="admin_mode" ng-controller="admin_mode_controller" ng-show={{mode==ADMIN_MODE}}>
 				<p>{{mode}}</p>
+				<mmm-addButton></mmm-addbutton>
 			</div>
 
 			<div id="view_mode" ng-controller="view_mode_controller" ng-show={{mode==VIEW_MODE}}>

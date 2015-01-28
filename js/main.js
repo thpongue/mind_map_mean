@@ -27,4 +27,10 @@ app.controller("view_mode_controller", function($scope) {
 });
 app.controller("venn_diagram_mode_controller", function($scope) {
 	
-})
+});
+app.directive("mmmAddbutton", function() {
+	console.log("usefulDirective called!");
+	return {
+		templateUrl:"templates/addButton.html"
+	}
+});
