@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/thpongue/mind_map_mean/issues"
   },
-  "homepage": "https://github.com/thpongue/mind_map_mean"
+  "homepage": "https://github.com/thpongue/mind_map_mean",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
