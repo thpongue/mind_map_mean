@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/thpongue/mind_map_mean",
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.3.0"
   }
 }
