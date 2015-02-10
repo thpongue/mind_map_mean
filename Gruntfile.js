@@ -1,4 +1,4 @@
-odule.exports = function(grunt) {
+module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		ngAnnotate: {
@@ -10,10 +10,15 @@ odule.exports = function(grunt) {
 		},
 		browserify: {
 			'build/app.js': ['js/main.js.annotated']
+		},
+		watch: {
+			files: [ 'js/**/*.js', 'css/**/*.css', 'index.html'] ,
+			tasks: [ 'build' ]
 		}
 	})
 	grunt.loadNpmTasks('grunt-ng-annotate');
-	grunt.loadNpmTasks('grunt-browserify')
-
-	grunt.registerTask('default', ['ngAnnotate', 'browserify']);
+	grunt.loadNpmTasks('grunt-browserify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.registerTask('build', ['ngAnnotate', 'browserify']);
+	grunt.registerTask('default', ['build']);
 }
