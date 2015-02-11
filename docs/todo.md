@@ -1,6 +1,3 @@
-Start Date  
-End Date  
-Something Date  
 [] project admin  
 	[] find a way to make watch run as a background process (currently using a seperate terminal which is daft)  
 	[] setup unit testing  
