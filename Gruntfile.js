@@ -45,7 +45,8 @@ module.exports = function(grunt) {
 		// TODO : fix browserify
 		// TODO : run unit tests
 		// TODO : can I simplify the watch code here?
-
+		// TODO : linting
+		
 		watch: {
 			files: [ 'code/**/*.js', 'code/**/*.css', 'code/index.html'] ,
 			tasks: [ 'build' ]
@@ -56,7 +57,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-ng-annotate');
-	// TODO: minify js
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.registerTask('build', ['clean:before', 'copy', 'ngAnnotate', 'browserify', 'sass', 'clean:after']);
