@@ -1,4 +1,5 @@
 var app = angular.module('mind_map_mean', []);
+var domsVar = "blah";
 app.controller("application_controller", function($scope) {
 	$scope.ADMIN_MODE = "ADMIN MODE";
 	$scope.VIEW_MODE = "VIEW MODE";
