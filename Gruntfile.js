@@ -63,13 +63,8 @@ module.exports = function(grunt) {
 		}
 	})
 
-	// main build tasks
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-ng-annotate');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-browserify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	// look in package.json and infer all grunt.loadNpmTasks 
+	require('load-grunt-tasks')(grunt);
 	grunt.registerTask('build', ['clean:before', 'copy', 'ngAnnotate', 'uglify', 'browserify', 'sass', 'clean:after' ]);
 	grunt.registerTask('default', ['build']);
 
