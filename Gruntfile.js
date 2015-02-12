@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				files: [
 					// includes files within path
 					{expand: true, flatten: true, src: ['code/index.html'], dest: 'build/'},
-					{expand: true, flatten: true, src: ['code/templates'], dest: 'build/templates'},
+					{expand: true, flatten: true, src: ['code/templates/*'], dest: 'build/templates/'},
 					{expand: true, flatten: true, src: ['node_modules/angular/angular.js'], dest: 'build/libs/'},
 				],
 			},
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 		ngAnnotate: {
 			demo: {
 				files: {
-					'code/tmp/main.js.annotated':['code/js/main.js']	
+					'code/tmp/main.js':['code/js/main.js']	
 				}
 			}
 		},
@@ -33,13 +33,13 @@ module.exports = function(grunt) {
 			},
 			something: {
 				files: {
-					'code/tmp/main.js.uglified': ['code/tmp/main.js.annotated']
+					'code/tmp/main.js': ['code/tmp/main.js']
 				}
 			}
 		},
 		// js - put into a single source file
 		browserify: {
-			'build/js/app.js': ['code/tmp/main.js.uglified']
+			'build/js/app.js': ['code/tmp/main.js']
 		},
 
 		// css - sass precompilation

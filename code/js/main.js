@@ -7,7 +7,6 @@ app.controller("application_controller", function($scope) {
 	$scope.VENN_DIAGRAM_MODE = "VENN DIAGRAM MODE";
 	$scope.mode=$scope.ADMIN_MODE;
 	$scope.toggleMode = function() {
-		console.log(thisShouldGetRenamed);
 		if ($scope.mode === $scope.ADMIN_MODE) {
 			$scope.mode = $scope.VIEW_MODE;
 		}
