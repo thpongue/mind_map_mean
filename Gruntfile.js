@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 				files: [
 					// includes files within path
 					{expand: true, flatten: true, src: ['code/index.html'], dest: 'build/'},
+					{expand: true, flatten: true, src: ['code/templates'], dest: 'build/templates'},
 					{expand: true, flatten: true, src: ['node_modules/angular/angular.js'], dest: 'build/libs/'},
 				],
 			},
@@ -50,10 +51,11 @@ module.exports = function(grunt) {
 			}
 		},
 	
-		// TODO : fix browserify
+		// TODO : use the reload feature of watch
 		// TODO : run unit tests with a headless browser
 		// TODO : linting
 		// TODO : code coverage
+		// TODO : once this is all nicely setup create a Yeoman version of this
 		
 		watch: {
 			files: [ 'code/**/*'] ,
