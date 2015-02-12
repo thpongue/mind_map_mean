@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 				files: [
 					// includes files within path
 					{expand: true, flatten: true, src: ['code/index.html'], dest: 'build/'},
-					{expand: true, flatten: true, src: ['code/libs/angular.js'], dest: 'build/libs/'},
+					{expand: true, flatten: true, src: ['node_modules/angular/angular.min.js'], dest: 'build/libs/'},
 				],
 			},
 		},
@@ -23,13 +23,24 @@ module.exports = function(grunt) {
 		ngAnnotate: {
 			demo: {
 				files: {
-					'code/tmp/main.js':['code/js/main.js']	
+					'code/tmp/main.js.annotated':['code/js/main.js']	
+				}
+			}
+		},
+		// uglify
+		uglify: {
+			options: {
+				mangle: true
+			},
+			something: {
+				files: {
+					'code/tmp/main.js.uglified': ['code/tmp/main.js.annotated']
 				}
 			}
 		},
 		// js - put into a single source file
 		browserify: {
-			'build/js/app.js': ['tmp/main.js']
+			'build/js/app.js': ['code/tmp/main.js.uglified']
 		},
 
 		// css - sass precompilation
@@ -41,14 +52,13 @@ module.exports = function(grunt) {
 			}
 		},
 	
-		// TODO : minify js	
 		// TODO : fix browserify
-		// TODO : run unit tests
-		// TODO : can I simplify the watch code here?
+		// TODO : run unit tests with a headless browser
 		// TODO : linting
+		// TODO : code coverage
 		
 		watch: {
-			files: [ 'code/**/*.js', 'code/**/*.css', 'code/index.html'] ,
+			files: [ 'code/**/*'] ,
 			tasks: [ 'build' ]
 		}
 	})
@@ -57,9 +67,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-ng-annotate');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.registerTask('build', ['clean:before', 'copy', 'ngAnnotate', 'browserify', 'sass', 'clean:after']);
+	grunt.registerTask('build', ['clean:before', 'copy', 'ngAnnotate', 'uglify', 'browserify', 'sass', 'clean:after' ]);
 	grunt.registerTask('default', ['build']);
 
 	// watch

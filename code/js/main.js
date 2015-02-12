@@ -1,11 +1,13 @@
+"use strict";
+
 var app = angular.module('mind_map_mean', []);
-var domsVar = "blah";
 app.controller("application_controller", function($scope) {
 	$scope.ADMIN_MODE = "ADMIN MODE";
 	$scope.VIEW_MODE = "VIEW MODE";
 	$scope.VENN_DIAGRAM_MODE = "VENN DIAGRAM MODE";
 	$scope.mode=$scope.ADMIN_MODE;
 	$scope.toggleMode = function() {
+		console.log(thisShouldGetRenamed);
 		if ($scope.mode === $scope.ADMIN_MODE) {
 			$scope.mode = $scope.VIEW_MODE;
 		}

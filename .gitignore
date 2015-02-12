@@ -3,3 +3,4 @@ node_modules
 build
 *.annotated
 .sass-cache
+.DS_STORE
