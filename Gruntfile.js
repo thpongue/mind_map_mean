@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		
 		// clean up tasks for before (remove everything from build) and after (remove tmp folders for transitional files)
 		clean: {
 			before: ['build/*'],
