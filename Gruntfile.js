@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		// clean up tasks for before (remove everything from build) and after (remove tmp folders for transitional files)
+		// clean up tasks for before (remove everything from build) and after (remove tmp folder for transitional files)
 		clean: {
 			before: ['build/*'],
 			after: ['code/tmp']

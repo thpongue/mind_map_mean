@@ -1,4 +1,9 @@
 [] project admin  
+	[] use the reload feature of watch
+	[] run unit tests with a headless browser
+	[] linting
+	[] code coverage
+	[] once this is all nicely setup create a Yeoman version of this
 	[] find a way to make watch run as a background process (currently using a seperate terminal which is daft)  
 	[] setup unit testing  
 [] add the create component to the admin mode  
