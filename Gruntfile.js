@@ -42,6 +42,7 @@ module.exports = function(grunt) {
 			'build/js/app.js': ['code/tmp/main.js']
 		},
 
+
 		// css - sass precompilation
 		sass:	{
 			dist: {
@@ -51,22 +52,17 @@ module.exports = function(grunt) {
 			}
 		},
 	
-		// TODO : use the reload feature of watch
-		// TODO : run unit tests with a headless browser
-		// TODO : linting
-		// TODO : code coverage
-		// TODO : once this is all nicely setup create a Yeoman version of this
-		
 		watch: {
-			files: [ 'code/**/*'] ,
-			tasks: [ 'build' ]
+			files: [ 'code/**/*', 'Gruntfile.js'] ,
+			tasks: [ 'devBuild' ]
 		}
 	})
 
 	// look in package.json and infer all grunt.loadNpmTasks 
 	require('load-grunt-tasks')(grunt);
-	grunt.registerTask('build', ['clean:before', 'copy', 'ngAnnotate', 'uglify', 'browserify', 'sass', 'clean:after' ]);
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('devBuild', ['clean:before', 'copy', 'ngAnnotate', 'browserify', 'sass', 'clean:after' ]);
+	grunt.registerTask('prodBuild', ['clean:before', 'copy', 'ngAnnotate', 'uglify', 'browserify', 'sass', 'clean:after' ]);
+	grunt.registerTask('default', ['devBuild']);
 
 	// watch
 	grunt.loadNpmTasks('grunt-contrib-watch');

@@ -5,19 +5,20 @@ app.controller("application_controller", function($scope) {
 	$scope.ADMIN_MODE = "ADMIN MODE";
 	$scope.VIEW_MODE = "VIEW MODE";
 	$scope.VENN_DIAGRAM_MODE = "VENN DIAGRAM MODE";
-	$scope.mode=$scope.ADMIN_MODE;
-	$scope.toggleMode = function() {
-		if ($scope.mode === $scope.ADMIN_MODE) {
-			$scope.mode = $scope.VIEW_MODE;
-		}
-		else if ($scope.mode === $scope.VIEW_MODE) { 
-			$scope.mode = $scope.VENN_DIAGRAM_MODE;
-		}
-		else {
-			$scope.mode = $scope.ADMIN_MODE;
-		}
+	$scope.toggleMode = setMode; 
+	function setMode() {
+		$scope.mode = isInAdminMode() ? $scope.VIEW_MODE : isInViewMode() ? $scope.VENN_DIAGRAM_MODE : $scope.ADMIN_MODE;
 	}
+	function isInAdminMode(){
+		return($scope.mode===$scope.ADMIN_MODE)
+	}
+	function isInViewMode(){
+		return($scope.mode===$scope.VIEW_MODE)
+	}
+	// initialise
+	setMode();
 });
+
 app.controller("mode_controller", function($scope) {
 		
 });
@@ -30,9 +31,8 @@ app.controller("view_mode_controller", function($scope) {
 app.controller("venn_diagram_mode_controller", function($scope) {
 	
 });
-app.directive("mmmAddbutton", function() {
-	console.log("usefulDirective called!");
+app.directive("mmmNode", function() {
 	return {
-		templateUrl:"templates/addButton.html"
+		templateUrl:"templates/node.html"
 	}
 });
