@@ -2,6 +2,8 @@
 	[x] create a default node
 	[x] show hand cursor when the user mouses over a node
 	[o] when node is clicked create a new element with the clicked node as its parent
+		[] work out how to iterate over a linked list in Angular
+		[] change data structure from array to linked list
 	[] add a text input for name
 	[] add a text input for the url
 [] unsorted backlog

@@ -8,11 +8,8 @@ app.controller("application_controller", function($scope) {
 	$scope.VIEW_MODE = "VIEW MODE";
 	$scope.VENN_DIAGRAM_MODE = "VENN DIAGRAM MODE";
 	$scope.toggleMode = setMode; 
-	$scope.links = [
-		{name:"name1",url:"http:www.google.com"},
-		{name:"name2",url:"http:www.google.com"},
-		{name:"name3",url:"http:www.google.com"},
-		{name:"name4",url:"http:www.google.com"}
+	$scope.nodes = [
+		{name:"root node",url:null, parent:null}
 	];
 	function setMode() {
 		$scope.mode = isInAdminMode() ? $scope.VIEW_MODE : isInViewMode() ? $scope.VENN_DIAGRAM_MODE : $scope.ADMIN_MODE;
@@ -43,7 +40,13 @@ app.controller("venn_diagram_mode_controller", function($scope) {
 	
 });
 
-// directive
+// directives
+
+app.directive("mmmNodes", function() {
+	return {
+		templateUrl:"templates/nodes.html"
+	}
+});
 app.directive("mmmNode", function() {
 	return {
 		templateUrl:"templates/node.html"
