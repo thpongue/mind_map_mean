@@ -1,7 +1,7 @@
 [] create a convenient way of structuring my learning material whilst playing with Angular  
 	[x] create a default node
-	[x] "+" button added to the default node
-	[] when "+" button is clicked create a new element
+	[x] show hand cursor when the user mouses over a node
+	[o] when node is clicked create a new element with the clicked node as its parent
 	[] add a text input for name
 	[] add a text input for the url
 [] unsorted backlog
