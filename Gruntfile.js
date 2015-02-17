@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 					// includes files within path
 					{expand: true, flatten: true, src: ['code/index.html'], dest: 'build/'},
 					{expand: true, flatten: true, src: ['code/templates/*'], dest: 'build/templates/'},
+					{expand: true, flatten: true, src: ['code/views/*'], dest: 'build/views/'},
 					{expand: true, flatten: true, src: ['node_modules/angular/angular.js'], dest: 'build/libs/'},
 				],
 			},

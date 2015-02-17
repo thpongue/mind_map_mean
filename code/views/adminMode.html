@@ -1,3 +1,5 @@
-<div id="admin_mode" ng-controller="admin_mode_controller" ng-show={{mode==ADMIN_MODE}}>
-	<p>{{mode}}</p>
+<div id="admin_mode" ng-controller="admin_mode_controller" ng-show=mode==ADMIN_MODE>
+	<p>ADMIN MODE</p>
+	<mmm-node ng-repeat="link in links">
+	</mmm-node>
 </div>

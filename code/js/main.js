@@ -8,6 +8,12 @@ app.controller("application_controller", function($scope) {
 	$scope.VIEW_MODE = "VIEW MODE";
 	$scope.VENN_DIAGRAM_MODE = "VENN DIAGRAM MODE";
 	$scope.toggleMode = setMode; 
+	$scope.links = [
+		{name:"name1",url:"http:www.google.com"},
+		{name:"name2",url:"http:www.google.com"},
+		{name:"name3",url:"http:www.google.com"},
+		{name:"name4",url:"http:www.google.com"}
+	];
 	function setMode() {
 		$scope.mode = isInAdminMode() ? $scope.VIEW_MODE : isInViewMode() ? $scope.VENN_DIAGRAM_MODE : $scope.ADMIN_MODE;
 	}
@@ -22,14 +28,17 @@ app.controller("application_controller", function($scope) {
 });
 
 app.controller("mode_controller", function($scope) {
-		
+	
 });
+
 app.controller("admin_mode_controller", function($scope) {
-	//<div ng-repeat="(key, value) in myObj"> ... </div>	
+
 });
+
 app.controller("view_mode_controller", function($scope) {
-			
+
 });
+
 app.controller("venn_diagram_mode_controller", function($scope) {
 	
 });
